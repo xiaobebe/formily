@@ -39,7 +39,7 @@ export const CSSStyle: ISchema = {
     },
     'style.opacity': {
       'x-decorator': 'FormItem',
-      'x-component': 'Slider',
+      'x-component': 'Range',
       'x-component-props': {
         defaultValue: 1,
         min: 0,

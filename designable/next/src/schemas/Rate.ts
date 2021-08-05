@@ -1,6 +1,6 @@
 import { ISchema } from '@formily/react'
 
-export const Rate: ISchema = {
+export const Rating: ISchema = {
   type: 'object',
   properties: {
     allowClear: {

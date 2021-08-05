@@ -1167,17 +1167,6 @@
     "@formily/reactive" "^2.0.0-beta.76"
     "@juggle/resize-observer" "^3.3.1"
 
-"@designable/core@^0.1.10":
-  version "0.1.51"
-  resolved "https://registry.yarnpkg.com/@designable/core/-/core-0.1.51.tgz#8c0ddfe7e3bdee5a7f3bf0f403aea720b4a54cf2"
-  integrity sha512-7gq8+vcjrSg+d3erAmiHxsInL67NFpCJgtQvdU5BHkWjFBVZcdyeLZw2eTP2yyoYCJ4sTjityFN1Xw7hbs+bHw==
-  dependencies:
-    "@designable/shared" "0.1.51"
-    "@formily/json-schema" "^2.0.0-beta.50"
-    "@formily/path" "^2.0.0-beta.50"
-    "@formily/reactive" "^2.0.0-beta.50"
-    "@juggle/resize-observer" "^3.3.1"
-
 "@designable/formily@^0.4.26":
   version "0.4.26"
   resolved "https://registry.yarnpkg.com/@designable/formily/-/formily-0.4.26.tgz#f36240db2edf33c9c6028c895f6baed6d59d8d50"
@@ -1219,13 +1208,6 @@
     "@formily/reactive" "^2.0.0-beta.76"
     "@formily/reactive-react" "^2.0.0-beta.76"
     "@juggle/resize-observer" "^3.3.1"
-
-"@designable/shared@0.1.51":
-  version "0.1.51"
-  resolved "https://registry.yarnpkg.com/@designable/shared/-/shared-0.1.51.tgz#8fcfee4450242744a9b14c204580a9ad2f3d6a46"
-  integrity sha512-09vbep5T2raVynQY68qymXz/6w0afj6TKyrLfCj1x/HJeRe6Ncrbg87J5rWa+Liq0sA8hEFa4Brd2o0QTTN90A==
-  dependencies:
-    requestidlecallback "^0.3.0"
 
 "@designable/shared@0.4.26":
   version "0.4.26"
@@ -4516,7 +4498,7 @@ async-validator@~1.8.1:
   dependencies:
     babel-runtime "6.x"
 
-async@^2.6.2:
+async@^2.0.1, async@^2.6.2:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
   integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
@@ -5626,6 +5608,13 @@ cli-cursor@^3.1.0:
   integrity sha512-I/zHAwsKf9FqGoXM4WWRACob9+SNukZTd94DWF57E4toouRulbCxcUh6RKUEOQlYTHJnzkPMySvPNaaSLNfLZw==
   dependencies:
     restore-cursor "^3.1.0"
+
+cli-source-preview@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/cli-source-preview/download/cli-source-preview-1.1.0.tgz#05303ab1279a9093ead1a3837b3ee231f3006544"
+  integrity sha1-BTA6sSeakJPq0aODez7iMfMAZUQ=
+  dependencies:
+    chalk "^1.1.3"
 
 cli-spinners@^2.2.0, cli-spinners@^2.5.0:
   version "2.6.0"
@@ -8103,6 +8092,17 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
+fast-sass-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/fast-sass-loader/download/fast-sass-loader-2.0.0.tgz#b2a3bb4b3b70d5c55000cee32572711951fac6f9"
+  integrity sha1-sqO7Sztw1cVQAM7jJXJxGVH6xvk=
+  dependencies:
+    async "^2.0.1"
+    cli-source-preview "^1.0.0"
+    co "^4.6.0"
+    fs-extra "3.x"
+    loader-utils "^1.1.0"
+
 fast-text-encoding@^1.0.0, fast-text-encoding@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/fast-text-encoding/-/fast-text-encoding-1.0.3.tgz#ec02ac8e01ab8a319af182dae2681213cfe9ce53"
@@ -8451,6 +8451,15 @@ from2@^2.1.0:
   dependencies:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
+
+fs-extra@3.x:
+  version "3.0.1"
+  resolved "https://registry.nlark.com/fs-extra/download/fs-extra-3.0.1.tgz#3794f378c58b342ea7dbbb23095109c4b3b62291"
+  integrity sha1-N5TzeMWLNC6n27sjCVEJxLO2IpE=
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^3.0.0"
+    universalify "^0.1.0"
 
 fs-extra@8.1.0, fs-extra@^8.1.0:
   version "8.1.0"
@@ -11356,6 +11365,13 @@ json5@^1.0.1:
   integrity sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
   dependencies:
     minimist "^1.2.0"
+
+jsonfile@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/jsonfile/download/jsonfile-3.0.1.tgz?cache=0&sync_timestamp=1604161876665&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjsonfile%2Fdownload%2Fjsonfile-3.0.1.tgz#a5ecc6f65f53f662c4415c7675a0331d0992ec66"
+  integrity sha1-pezG9l9T9mLEQVx2daAzHQmS7GY=
+  optionalDependencies:
+    graceful-fs "^4.1.6"
 
 jsonfile@^4.0.0:
   version "4.0.0"

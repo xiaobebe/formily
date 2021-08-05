@@ -16,14 +16,14 @@ import {
   ReactionsSetter,
   ValidatorSetter,
 } from '@formily/designable-setters'
-import { FormTab } from '@formily/antd'
+import { FormTab } from '@formily/next'
 import { clone } from '@formily/shared'
 import { FormItemSwitcher } from '../FormItemSwitcher'
 import { DesignableObject } from '../DesignableObject'
 import { createOptions } from './options'
 import { IDesignableFieldFactoryProps } from './types'
 import { includesComponent } from '../../shared'
-import * as defaultSchemas from '../../../../next/src/schemas'
+import * as defaultSchemas from '../../schemas'
 
 Schema.silent()
 

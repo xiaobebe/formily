@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react'
 import { IDesignerProps, GlobalRegistry } from '@designable/core'
 import { createForm } from '@formily/core'
-import { Form, IFormLayoutProps } from '@formily/antd'
+import { Form, IFormLayoutProps } from '@formily/next'
 import { observer } from '@formily/react'
 import { usePrefix } from '@designable/react'
-import { Form as FormPropsSchema } from '../../../../next/src/schemas'
+import { Form as FormPropsSchema } from '../../schemas'
 import './styles.less'
+import { ConfigProvider } from '@alifd/next'
 
 export interface IDesignableFormFactoryProps extends IDesignerProps {
   registryName: string
@@ -38,14 +39,23 @@ export const createDesignableForm = (options: IDesignableFormFactoryProps) => {
       []
     )
     return (
-      <FormComponent
-        {...props}
-        style={{ ...props.style }}
-        className={prefix}
-        form={form}
+      <ConfigProvider
+        {...({} as any)}
+        defaultPropsConfig={{
+          Card: {
+            contentHeight: 'unset',
+          },
+        }}
       >
-        {props.children}
-      </FormComponent>
+        <FormComponent
+          {...props}
+          style={{ ...props.style }}
+          className={prefix}
+          form={form}
+        >
+          {props.children}
+        </FormComponent>
+      </ConfigProvider>
     )
   })
 

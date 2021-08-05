@@ -3,7 +3,7 @@ import fs from 'fs-extra'
 import { GlobSync } from 'glob'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import autoprefixer from 'autoprefixer'
-import { getThemeVariables } from 'antd/dist/theme'
+// import { getThemeVariables } from 'antd/dist/theme'
 
 const getWorkspaceAlias = () => {
   const basePath = path.resolve(__dirname, '../../../')
@@ -47,7 +47,7 @@ export default {
     react: 'React',
     'react-dom': 'ReactDOM',
     moment: 'moment',
-    antd: 'antd',
+    "@alifd/next": 'Next',
   },
   module: {
     rules: [
@@ -67,6 +67,22 @@ export default {
         use: [MiniCssExtractPlugin.loader, require.resolve('css-loader')],
       },
       {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader' },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => autoprefixer(),
+            },
+          },
+          {
+            loader: 'fast-sass-loader',
+          },
+        ],
+      },
+      {
         test: /\.less$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -80,9 +96,6 @@ export default {
           {
             loader: 'less-loader',
             options: {
-              modifyVars: getThemeVariables({
-                // dark: true, // 开启暗黑模式
-              }),
               javascriptEnabled: true,
             },
           },

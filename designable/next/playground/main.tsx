@@ -84,7 +84,7 @@ const App = () => {
           >
             <DragSourceWidget title="sources.Inputs" name="inputs" />
             <DragSourceWidget title="sources.Layouts" name="layouts" />
-            <DragSourceWidget title="sources.Arrays" name="arrays" />
+            {/*<DragSourceWidget title="sources.Arrays" name="arrays" />*/}
           </CompositePanel.Item>
           <CompositePanel.Item
             title="panels.OutlinedTree"
